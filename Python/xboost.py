@@ -1,4 +1,4 @@
-"""XBoost Version 0.1, 09/09/2012
+"""XBoost Version 0.2, 11/04/2012
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -110,7 +110,7 @@ class DataProc(object):
         std: standard deviation vector
         naval: unrecognized value indicator
         replace: whether replace every naval with the mean
-        return value is a tuple (new, mu, std) storing new data, the mean and the standard deviation"""
+        return value storing new data"""
         
         #Compute the new data
         new = numpy.zeros(data.shape)
@@ -122,6 +122,7 @@ class DataProc(object):
                     new[i,j] = 0
                 else:
                     new[i,j] = naval
+        return new
 
 class Classifier(object):
     """Classifier virtual object"""
